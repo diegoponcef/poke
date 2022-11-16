@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import './infrastructure/models/pokemon.dart';
+import './ui/poke_list.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -29,6 +32,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  final List<Pokemon> pokemonList = [
+    Pokemon(name: 'Charisar', url: 'Url Charisar')
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,9 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
+        child: PokeList(pokemonList)
       ),
     );
   }
